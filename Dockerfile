@@ -39,3 +39,5 @@ ADD configs/steno.conf /etc/stenographer/config
 
 RUN chmod 644 /etc/stenographer/config && \
     /usr/bin/stenokeys.sh stenographer stenographer
+
+CMD ["/usr/bin/stenographer", "-syslog=false", "-v=1"]

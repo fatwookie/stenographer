@@ -1,0 +1,14 @@
+version: "3"
+services:
+  stenographer:
+    build: .
+    image: stenographer:latest
+    container_name: stenographer
+    volumes:
+      - ./configs/steno.conf:/etc/stenographer/config:ro
+      - ./data:/data
+    network_mode: "host"
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+      - IPC_LOCK
